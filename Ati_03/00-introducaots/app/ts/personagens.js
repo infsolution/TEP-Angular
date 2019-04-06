@@ -30,12 +30,52 @@ var Personagem = (function () {
 var Soldado = (function (_super) {
     __extends(Soldado, _super);
     function Soldado() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.forca_ataque = 10;
+        return _this;
     }
+    Soldado.prototype.atacar = function (inimigo) {
+        inimigo.defenderAtaque(this.forca_ataque);
+    };
+    Soldado.prototype.defenderAtaque = function (valor) {
+        if (valor <= this.energia) {
+            this.energia -= valor / 2;
+        }
+        else {
+            this.energia = 0;
+        }
+    };
     return Soldado;
 }(Personagem));
+var Cavaleiro = (function (_super) {
+    __extends(Cavaleiro, _super);
+    function Cavaleiro() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Cavaleiro.prototype.atacar = function (inimigo) {
+        inimigo.defenderAtaque(this.forca_ataque * 2);
+    };
+    Cavaleiro.prototype.defenderAtaque = function (valor) {
+        if (valor <= this.energia) {
+            this.energia -= valor / 3;
+        }
+        else {
+            this.energia = 0;
+        }
+    };
+    return Cavaleiro;
+}(Soldado));
 var per = new Personagem(1, "Carlos", 279);
-console.log(per.estaVivo());
-per.defenderAtaque(127);
-console.log(per.energia);
+//console.log(per.estaVivo());
+//per.defenderAtaque(500)
+//console.log(per.estaVivo());
+//console.log(per.energia);
+var soldado_bananinha = new Soldado(3, "Malucao", 120);
+var soldado_raso = new Cavaleiro(2, "malvado", 250);
+//soldado_raso.atacar(soldado_bananinha);
+//console.log(soldado_bananinha.energia);
+soldado_bananinha.atacar(soldado_raso);
+console.log(soldado_raso.energia);
+//soldado_raso.atacar(per);
+//console.log(per.energia);
 //# sourceMappingURL=personagens.js.map
