@@ -96,6 +96,3 @@ console.log(Estados[0]);
 
 
 //05 
-function exibri(...nome:string[]{
-    
-})

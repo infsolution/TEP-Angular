@@ -12,8 +12,6 @@
   "devDependencies": {
     "typescript": "^2.3.2"
   },
-  "dependencies": {
-    "typescript": "^2.3.2"
-  },
+  "dependencies": {},
   "description": ""
 }
