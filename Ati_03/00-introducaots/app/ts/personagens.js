@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -8,6 +9,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+Object.defineProperty(exports, "__esModule", { value: true });
 var Personagem = (function () {
     function Personagem(id, nome, energia) {
         this.id = id;
@@ -27,6 +29,7 @@ var Personagem = (function () {
     };
     return Personagem;
 }());
+exports.Personagem = Personagem;
 var Soldado = (function (_super) {
     __extends(Soldado, _super);
     function Soldado() {
@@ -47,6 +50,7 @@ var Soldado = (function (_super) {
     };
     return Soldado;
 }(Personagem));
+exports.Soldado = Soldado;
 var Cavaleiro = (function (_super) {
     __extends(Cavaleiro, _super);
     function Cavaleiro() {
@@ -65,6 +69,7 @@ var Cavaleiro = (function (_super) {
     };
     return Cavaleiro;
 }(Soldado));
+exports.Cavaleiro = Cavaleiro;
 var per = new Personagem(1, "Carlos", 279);
 //console.log(per.estaVivo());
 //per.defenderAtaque(500)

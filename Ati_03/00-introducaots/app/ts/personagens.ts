@@ -49,6 +49,9 @@ class Cavaleiro extends Soldado{
     }
 }
 
+export{Personagem, Cavaleiro, Soldado}
+
+
 let per = new Personagem(1,"Carlos",279);
 //console.log(per.estaVivo());
 //per.defenderAtaque(500)
