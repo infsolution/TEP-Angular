@@ -1,0 +1,20 @@
+    <h2>Tarefas</h2>
+    <ul class="todos">
+      <li *ngFor="let todo of todos"
+        [class.selected]="todo === selectedTodo"
+        (click)="onSelect(todo)">
+        <span class="badge">{{todo.id}}</span> {{todo.description}}: {{todo.responsible}}
+      </li>
+    </ul>
+     
+    <div *ngIf="selectedTodo">
+     
+      <h2>{{selectedTodo.description | uppercase}}</h2>
+      <div><span>id: </span>{{selectedTodo.id}}</div>
+      <div>
+        <label>Responsável:
+          <input [(ngModel)]="selectedTodo.responsible" placeholder="responsible"/>
+        </label>
+      </div>
+     
+    </div>
