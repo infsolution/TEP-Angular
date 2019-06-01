@@ -7,18 +7,19 @@ import {TodoService} from '../todo.service';
   styleUrls: ['./todos.component.css']
 })
 export class TodosComponent implements OnInit {
-	todos = Todo[];
-	selectedTodo: Todo;
+	todos: Todo[];
+	//selectedTodo: Todo;
   constructor(private todoService: TodoService) { }
 
   ngOnInit() {
     this.getTodos();
   }
-    onSelect(todo: Todo): void {
+    /*onSelect(todo: Todo): void {
     this.selectedTodo = todo;
-  }
+  }*/
     getTodos(): void {
     this.todoService.getTodos()
         .subscribe(todos => this.todos = todos);
   }
+
 }

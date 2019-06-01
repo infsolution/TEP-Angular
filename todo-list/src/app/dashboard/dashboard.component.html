@@ -1,0 +1,7 @@
+<h1>{{title}}</h1>
+<a *ngFor="let todo of todos" class="col-1-4"
+    routerLink="/detail/{{todo.id}}">
+  <div class="module todo">
+    <h4>{{todo.description}}</h4>
+  </div>
+</a>

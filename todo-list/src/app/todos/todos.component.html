@@ -1,14 +1,20 @@
+
     <h2>Tarefas</h2>
+<div class="row">
+  <div class="col-4">    
     <ul class="todos">
-      <li *ngFor="let todo of todos"
-        [class.selected]="todo === selectedTodo"
-        (click)="onSelect(todo)">
-        <span class="badge">{{todo.id}}</span> {{todo.description}}: {{todo.responsible}}
+      <li *ngFor="let todo of todos">
+        <!--[class.selected]="todo === selectedTodo"
+        (click)="onSelect(todo)"
+        <span class="badge">{{todo.id}}</span> {{todo.description}}-->
+        <a routerLink="/detail/{{todo.id}}">
+      <span class="badge">{{todo.id}}</span> {{todo.description}}
+    </a>
       </li>
     </ul>
-     
+  </div> 
+  <div class="col-6">
     <div *ngIf="selectedTodo">
-     
       <h2>{{selectedTodo.description | uppercase}}</h2>
       <div><span>id: </span>{{selectedTodo.id}}</div>
       <div>
@@ -16,5 +22,17 @@
           <input [(ngModel)]="selectedTodo.responsible" placeholder="responsible"/>
         </label>
       </div>
-     
+      <div>
+       <span>Concluída</span>
+      </div>
+      <div class="progress-bar">
+        <div [ngStyle]="{'width.%':selectedTodo.conclusion}" class="progresso">
+          
+        </div>
+      </div>    
     </div>
+  </div>  
+</div>
+
+
+
