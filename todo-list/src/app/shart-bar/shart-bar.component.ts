@@ -24,7 +24,7 @@ export class ShartBarComponent implements OnInit {
       }
     }
   };
-  public barChartLabels: Label[] = [this.todos[0].description, this.todos[1].description, this.todos[2].description, this.todos[3].description, this.todos[4].description, this.todos[4].description, this.todos[6].description,this.todos[7].description,this.todos[8].description];
+  public barChartLabels: Label[] = [this.todos[0].description, this.todos[1].description, this.todos[2].description, this.todos[3].description, this.todos[4].description, this.todos[5].description, this.todos[6].description,this.todos[7].description,this.todos[8].description];
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
   public barChartPlugins = [pluginDataLabels];
