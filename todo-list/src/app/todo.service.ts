@@ -13,7 +13,7 @@ export class TodoService {
   return of(TODOS);
 }
 
-getTodo(id: number): Observable<Todo[]> {
+getTodo(id: number): Observable<Todo> {
   return of(TODOS.find(todo=>todo.id === id));
 }
 }

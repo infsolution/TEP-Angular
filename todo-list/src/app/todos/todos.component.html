@@ -1,12 +1,11 @@
-
-    <h2>Tarefas</h2>
+    <!--h2>Tarefas</h2>
 <div class="row">
   <div class="col-4">    
     <ul class="todos">
       <li *ngFor="let todo of todos">
-        <!--[class.selected]="todo === selectedTodo"
+        <[class.selected]="todo === selectedTodo"
         (click)="onSelect(todo)"
-        <span class="badge">{{todo.id}}</span> {{todo.description}}-->
+        <span class="badge">{{todo.id}}</span> {{todo.description}}>
         <a routerLink="/detail/{{todo.id}}">
       <span class="badge">{{todo.id}}</span> {{todo.description}}
     </a>
@@ -32,7 +31,9 @@
       </div>    
     </div>
   </div>  
-</div>
+</div-->
+
+<app-shart-bar></app-shart-bar>
 
 
 

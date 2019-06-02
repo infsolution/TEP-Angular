@@ -1,19 +1,26 @@
 <h1>{{title}}</h1>
-<div *ngIf="todo">
-	<h2>{{todo.description | uppercase}}</h2>
-  <div><span>id: </span>{{todo.id}}</div>
-  <div>
-    <label>Responsável:
-      <input [(ngModel)]="todo.responsible" placeholder="responsible"/>
-    </label>
-  </div>
-<div>
-       <span>Concluída</span>
-      </div>
-      <div class="progress-bar">
-        <div [ngStyle]="{'width.%':todo.conclusion}" class="progresso">
-          
+<div class="row">
+  <div class="col-12">
+    <div class="conteiner-chart">
+        <div *ngIf="todo">
+        	<h2>{{todo.description | uppercase}}</h2>
+          <div><span>Código da tarefa: </span>{{todo.id}}</div>
+          <div>
+            <label>Responsável:
+              <input [(ngModel)]="todo.responsible" placeholder="responsible"/>
+            </label>
+          </div>
+          <div>
+          <hr>
+           <span>Tarefa {{todo.conclusion}}% Concluída</span>
+          </div>
+          <div class="progress-bar">
+            <div [ngStyle]="{'width.%':todo.conclusion}" class="progresso">
+            </div>
+          </div>    	
         </div>
-      </div>    	
+      <hr>
+      <button (click)="goBack()">Voltar</button>
+    </div>
+  </div>
 </div>
-<button (click)="goBack()">Voltar</button>
